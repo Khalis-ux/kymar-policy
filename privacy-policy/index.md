@@ -19,7 +19,8 @@ can opt in to send something off your device.
 | Your name / display picture | Only if you sign in with Apple | Keychain on-device | No |
 | Microphone audio | Only when a pitch / mic drill is active | Never persisted | No |
 | Crash + diagnostic reports | Only if you turn ON "Upload diagnostics on launch" | Sent to our error tracker (Sentry) | Sentry only |
-| Ads, tracking pixels, analytics | **None** | — | — |
+| Rewarded video ads (Google AdMob) | Yes — IDFA when ATT allowed, anonymous device signals otherwise | Sent to Google AdMob | Google AdMob (ad attribution) |
+| Other tracking pixels, analytics SDKs | **None** | — | — |
 | Contacts, photos, location, health | **Not requested** | — | — |
 
 ## Data the app handles
@@ -96,16 +97,43 @@ When you buy Kymar Pro, the transaction is handled entirely by Apple's
 StoreKit. We receive only the entitlement status (Pro or not). We
 never see your Apple ID, payment method, or transaction history.
 
+### 7. Rewarded video ads (Google AdMob)
+
+Free users can choose to watch a short rewarded video to temporarily
+unlock a Pro feature (one sampler instrument for 30 minutes, or the
+detailed breakdown of a single quiz session). Ads are loaded and shown
+by **Google Mobile Ads SDK**. Pro users see no ads.
+
+When a rewarded video loads, Google receives:
+
+- **Device IDFA (Identifier for Advertisers)** — only if you grant
+  permission via Apple's App Tracking Transparency prompt. If you tap
+  "Ask App Not to Track" (or have tracking globally off in
+  Settings → Privacy → Tracking), the IDFA is replaced with all-zeros
+  and Google falls back to **SKAdNetwork** for anonymous attribution.
+- **Device model, OS version, screen size, language, coarse location
+  (city-level, derived from IP)** — standard ad-serving context.
+- **App version + bundle ID** — `app.kymar` so Google can verify the
+  request comes from Kymar.
+
+Google's privacy policy:
+<https://policies.google.com/privacy>.
+
+You can opt out of personalised ads at any time in
+**Settings → Privacy & Security → Apple Advertising → Personalised
+Ads** (system-wide) or by revoking Kymar's tracking permission in
+**Settings → Privacy → Tracking → Kymar**. Rewarded video will still
+work — only the ad targeting becomes anonymous.
+
 ## What we do NOT collect
 
-- ❌ Tracking or advertising IDs
 - ❌ Analytics frameworks (Firebase, Mixpanel, Amplitude, etc.)
 - ❌ Behavioural / session recording
-- ❌ Location
+- ❌ Precise location (GPS / Wi-Fi triangulation)
 - ❌ Contacts, photos, calendar
 - ❌ HealthKit data
 - ❌ Social-media identifiers
-- ❌ Any third-party SDKs that "phone home" by default
+- ❌ Any third-party SDKs other than Google Mobile Ads (rewarded video only) and Sentry (opt-in crash reporting only)
 
 ## Your rights
 
