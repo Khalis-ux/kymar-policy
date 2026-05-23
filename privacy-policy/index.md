@@ -20,6 +20,7 @@ can opt in to send something off your device.
 | Microphone audio | Only when a pitch / mic drill is active | Never persisted | No |
 | Crash + diagnostic reports | Only if you turn ON "Upload diagnostics on launch" | Sent to our error tracker (Sentry) | Sentry only |
 | Rewarded video ads (Google AdMob) | Yes — IDFA when ATT allowed, anonymous device signals otherwise | Sent to Google AdMob | Google AdMob (ad attribution) |
+| Anonymous usage stats | Only if you turn ON "Share anonymous usage stats" | Sent to our Cloudflare Worker | We host it (no third party) |
 | Other tracking pixels, analytics SDKs | **None** | — | — |
 | Contacts, photos, location, health | **Not requested** | — | — |
 
@@ -97,7 +98,45 @@ When you buy Kymar Pro, the transaction is handled entirely by Apple's
 StoreKit. We receive only the entitlement status (Pro or not). We
 never see your Apple ID, payment method, or transaction history.
 
-### 7. Rewarded video ads (Google AdMob)
+### 7. Anonymous usage stats (opt-in)
+
+By default, Kymar collects engagement events **locally on your device**
+in a ring buffer (last 1,000 events): which module you opened, when
+you completed a quiz, when you tapped Pro CTAs. This drives the
+Insights panel in the You tab — none of it leaves your phone unless
+you opt in below.
+
+If you turn ON **"Share anonymous usage stats"** in the You tab, the
+ring buffer is periodically POSTed to our Cloudflare Worker at
+`kymar-analytics.vittoriocwork.workers.dev`. The payload contains:
+
+- A random `installId` (UUID generated on first launch, never tied to
+  your Apple ID, name, email, IDFA, or any persistent device identifier)
+- App version, iOS version, locale
+- Event names from a fixed enum (`module_open`, `quiz_complete`,
+  `paywall_shown`, `purchase_attempt`, etc.) with an optional module
+  ID and integer value
+
+It does **not** contain:
+
+- Your name, email, Apple ID, profile picture
+- Audio recordings, microphone samples, or anything you typed
+- IDFA or any persistent identifier other than the install-scoped UUID
+- Practice content (answers, intervals, chord names, your composer
+  progressions)
+
+We use this to answer "which modules are people sticking with?" and
+"where does the funnel drop off?" — the kind of questions that drive
+product roadmap, not advertising. The data is **not** shared with any
+third party (the Worker is ours), is **not** combined with data from
+other apps, and is **not** used for tracking in Apple's definition
+(no cross-app linking, no data broker, no ad targeting).
+
+Turn the toggle OFF at any time. The next "Reset everything" in the
+You tab also rotates the `installId` so any further uploads start
+under a fresh anonymous identity with no continuity to the old one.
+
+### 8. Rewarded video ads (Google AdMob)
 
 Free users can choose to watch a short rewarded video to temporarily
 unlock a Pro feature (one sampler instrument for 30 minutes, or the
@@ -127,13 +166,13 @@ work — only the ad targeting becomes anonymous.
 
 ## What we do NOT collect
 
-- ❌ Analytics frameworks (Firebase, Mixpanel, Amplitude, etc.)
-- ❌ Behavioural / session recording
+- ❌ Third-party analytics frameworks (Firebase, Mixpanel, Amplitude, etc.)
+- ❌ Behavioural / session recording (no replay tools)
 - ❌ Precise location (GPS / Wi-Fi triangulation)
 - ❌ Contacts, photos, calendar
 - ❌ HealthKit data
 - ❌ Social-media identifiers
-- ❌ Any third-party SDKs other than Google Mobile Ads (rewarded video only) and Sentry (opt-in crash reporting only)
+- ❌ Any third-party SDKs other than Google Mobile Ads (rewarded video only) and Sentry (opt-in crash reporting only); the opt-in usage stats go to our own Cloudflare Worker, not a third party
 
 ## Your rights
 
