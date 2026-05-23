@@ -6,6 +6,9 @@ title: Privacy Policy
 
 _Last updated: 23 May 2026_
 
+This policy mirrors the App Store **Privacy Labels** you see on
+Kymar's listing — same data, same wording, no surprises.
+
 Kymar ("the app", "we") is designed to be **private by default**. We do not
 collect, sell, or share personal information. This document explains
 what data the app handles, where it lives, and the few cases where you
@@ -150,10 +153,20 @@ When a rewarded video loads, Google receives:
   "Ask App Not to Track" (or have tracking globally off in
   Settings → Privacy → Tracking), the IDFA is replaced with all-zeros
   and Google falls back to **SKAdNetwork** for anonymous attribution.
+- **Ad interaction data** — ad request, impression, completion, and
+  reward-earned events tagged with the same IDFA / SKAdNetwork token.
 - **Device model, OS version, screen size, language, coarse location
   (city-level, derived from IP)** — standard ad-serving context.
 - **App version + bundle ID** — `app.kymar` so Google can verify the
   request comes from Kymar.
+
+**This data IS linked to your device identity** (via IDFA when ATT is
+granted) **and IS used for tracking** in Apple's definition: Google
+combines Kymar's ad signals with data from thousands of other apps in
+the AdMob network to serve more relevant ads and measure attribution.
+This is the standard ad-network business model. Apple's privacy label
+on Kymar's listing reflects this explicitly under "Data Used to Track
+You" → Identifiers, Usage Data.
 
 Google's privacy policy:
 <https://policies.google.com/privacy>.
@@ -162,7 +175,11 @@ You can opt out of personalised ads at any time in
 **Settings → Privacy & Security → Apple Advertising → Personalised
 Ads** (system-wide) or by revoking Kymar's tracking permission in
 **Settings → Privacy → Tracking → Kymar**. Rewarded video will still
-work — only the ad targeting becomes anonymous.
+work — only the ad targeting becomes anonymous (SKAdNetwork-only
+attribution, no IDFA).
+
+The only sure way to stop ad data collection entirely is to upgrade
+to **Pro** (You tab → Upgrade), which removes all ads.
 
 ## What we do NOT collect
 
@@ -174,14 +191,45 @@ work — only the ad targeting becomes anonymous.
 - ❌ Social-media identifiers
 - ❌ Any third-party SDKs other than Google Mobile Ads (rewarded video only) and Sentry (opt-in crash reporting only); the opt-in usage stats go to our own Cloudflare Worker, not a third party
 
+## App Store Privacy Labels (alignment with this policy)
+
+For transparency, these are the App Store labels you'll see on Kymar's
+listing and exactly which features they correspond to in this policy:
+
+### Data Used to Track You
+
+- **Identifiers** (Device ID / IDFA) → AdMob rewarded video — section 8
+- **Usage Data** (Advertising Data) → AdMob impression / completion events — section 8
+
+### Data Linked to You
+
+Same two categories as above. We declare them "linked" because IDFA is
+linked to the device by design.
+
+### Data Not Linked to You
+
+- **Diagnostics** (Crash + Performance + Other Diagnostic Data) →
+  opt-in Sentry crash reports — section 5
+- **Usage Data** (Product Interaction) → opt-in Cloudflare Worker
+  analytics with anonymous installId — section 7
+
 ## Your rights
 
-Since the only data that ever leaves your device is the opt-in
-diagnostic report — and even that is scrubbed and contains no
-personally identifying information — there is effectively nothing to
-"request access to" or "be forgotten" under GDPR / CCPA. Every state
-the app keeps on your device can be cleared from You → Reset
-everything.
+Under GDPR / CCPA you can request: a copy of the data we have about
+you, deletion of that data, or restriction of processing. For Kymar
+specifically:
+
+- **Sentry crash reports** — turn off the upload toggle in You →
+  Diagnostics. Tap "Clear reports" to wipe everything locally.
+- **Anonymous usage stats** — turn off the toggle in You → Privacy.
+  Tap "Reset everything" in You → Data to rotate the `installId` so
+  any further uploads start fresh with no continuity to the old data.
+- **AdMob ad data** — revoke tracking in iOS Settings → Privacy →
+  Tracking → Kymar to switch to anonymous SKAdNetwork-only, or
+  upgrade to Pro to remove ads entirely.
+- **Practice data + Apple sign-in info** — never leaves your device
+  (unless you opt in to iCloud sync, which uses your own private
+  CloudKit container). "Reset everything" in the You tab clears it.
 
 If you have specific concerns, email us at the address in our [Support
 page](https://khalis-ux.github.io/kymar-policy/support) and we will
@@ -189,9 +237,21 @@ help in good faith.
 
 ## Children
 
-Kymar is rated 4+ and contains no advertising, no third-party links,
-and no user-generated content. Parents can let kids practise ear
-training freely.
+Kymar is rated 4+. It contains **rewarded video ads** served by
+Google AdMob that the user must explicitly choose to watch to
+temporarily unlock a Pro feature — never auto-playing, never
+interstitial, never banner. Pro removes all ads.
+
+We do not knowingly request tracking permission from users under 13,
+and Apple's App Tracking Transparency framework already gates the
+prompt at the OS level. Kymar contains no user-generated content,
+no third-party social links, no in-app browser, and no chat.
+
+If your child uses Kymar and you'd prefer they never see rewarded
+ads, configure **Screen Time → Content & Privacy Restrictions →
+Allow Changes → Advertising → Don't Allow Changes** with tracking
+denied — Kymar's rewarded prompt will still appear but the ad serve
+will fall back to anonymous attribution.
 
 ## Changes
 
