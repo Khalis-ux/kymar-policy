@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Kymar — Support</title>
+  <meta name="description" content="Help, troubleshooting, and how to reach Kymar Studio.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E🎧%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#0a0a0f; --surface:#13131c; --border:#23232f;
+      --text:#e8e8ec; --text-dim:#8b8b96;
+      --accent:#06b6d4; --accent-soft:rgba(6,182,212,.12);
+      --radius:14px; --maxw:760px;
+      --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+      --font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.65}
+    body{font-size:16px}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+    a:hover{border-bottom-color:var(--accent)}
+    main{max-width:var(--maxw);margin:0 auto;padding:60px 22px 80px}
+    header.brand{display:flex;align-items:center;gap:10px;margin-bottom:48px}
+    header.brand .mark{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;font-family:var(--font-mono)}
+    header.brand .name{font-weight:600;font-size:15px;letter-spacing:.3px}
+    header.brand .pill{margin-left:auto;font-size:10px;font-family:var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--border);padding:4px 8px;border-radius:6px}
+    h1{font-size:42px;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px}
+    .lede{font-size:18px;color:var(--text-dim);margin:0 0 8px;max-width:60ch}
+    .updated{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:48px}
+
+    .contact-hero{background:linear-gradient(180deg, var(--accent-soft), transparent);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:48px}
+    .contact-hero .row{display:flex;align-items:center;gap:14px}
+    .contact-hero .icon{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .contact-hero .label{font-size:11px;color:var(--text-dim);font-family:var(--font-mono);letter-spacing:1.2px;text-transform:uppercase}
+    .contact-hero a.link{font-size:18px;font-weight:600;color:var(--text);letter-spacing:-.01em;border-bottom:0;display:inline-block;margin-top:2px}
+    .contact-hero a.link:hover{color:var(--accent)}
+    .contact-hero .meta{font-size:13px;color:var(--text-dim);margin:6px 0 0}
+
+    nav.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:48px}
+    nav.toc .title{font-size:11px;font-family:var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+    nav.toc ol{margin:0;padding:0;list-style:none;counter-reset:item}
+    nav.toc li{counter-increment:item;padding:4px 0;display:flex;align-items:baseline;gap:10px}
+    nav.toc li::before{content:counter(item,decimal-leading-zero);font-family:var(--font-mono);font-size:11px;color:var(--text-dim);min-width:24px}
+
+    h2{font-size:24px;letter-spacing:-.01em;margin:56px 0 8px;scroll-margin-top:24px;padding-top:8px;border-top:1px solid var(--border)}
+    h2:first-of-type{border-top:0;margin-top:0;padding-top:0}
+    h2 .num{font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-right:10px;font-weight:500;letter-spacing:.5px}
+    h3{font-size:15px;letter-spacing:.2px;margin:24px 0 4px;color:var(--text)}
+    p{margin:12px 0}
+    ul{padding-left:22px} ul li{margin:6px 0}
+
+    details.faq{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0;margin:10px 0;overflow:hidden}
+    details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:500;font-size:15px;display:flex;align-items:center;gap:12px}
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq summary::after{content:"+";margin-left:auto;color:var(--text-dim);font-family:var(--font-mono);font-size:18px;font-weight:400}
+    details.faq[open] summary::after{content:"−"}
+    details.faq .body{padding:0 18px 16px;color:var(--text-dim);font-size:14px;line-height:1.7}
+    details.faq .body p:first-child{margin-top:0}
+    details.faq .body p:last-child{margin-bottom:0}
+    details.faq .body strong{color:var(--text)}
+
+    .key{font-family:var(--font-mono);font-size:13px;background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:4px}
+
+    .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:24px 0}
+    .action{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--border);transition:border-color .15s, transform .15s}
+    .action:hover{border-color:var(--accent);transform:translateY(-1px)}
+    .action .ttl{font-weight:600;font-size:14px}
+    .action .sub{font-size:12px;color:var(--text-dim)}
+
+    code{font-family:var(--font-mono);font-size:13px;background:rgba(255,255,255,.05);padding:1px 6px;border-radius:4px}
+
+    footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:var(--text-dim);font-size:13px}
+    footer .links{display:flex;gap:18px;flex-wrap:wrap}
+
+    @media (max-width:600px){
+      main{padding:36px 18px 60px}
+      h1{font-size:32px} h2{font-size:20px;margin-top:40px}
+      header.brand{margin-bottom:32px}
+      .contact-hero a.link{font-size:16px}
+    }
+    @media (prefers-color-scheme:light){
+      :root{--bg:#fafafa;--surface:#ffffff;--border:#e6e6ea;--text:#0a0a0f;--text-dim:#6b6b7a;--accent:#0891b2;--accent-soft:rgba(8,145,178,.10)}
+      code{background:rgba(0,0,0,.05)}
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header class="brand">
+    <div class="mark">K</div>
+    <div class="name">Kymar</div>
+    <div class="pill">Support</div>
+  </header>
+
+  <h1>Support</h1>
+  <p class="lede">Welcome. If something isn't working or you have an idea, this page is where to start.</p>
+  <div class="updated">Response time · usually under 48 hours</div>
+
+  <div class="contact-hero">
+    <div class="row">
+      <div class="icon">⌥</div>
+      <div>
+        <div class="label">Get in touch</div>
+        <a class="link" href="https://github.com/Khalis-ux/kymar-site/issues/new">Open an issue on GitHub →</a>
+        <div class="meta">Every report is read and triaged. Bug reports and feature requests both welcome. GitHub signup is free and ~30 seconds.</div>
+        <div class="meta">A direct email (<code>hello@kymar.app</code>) will replace the GitHub channel once the domain is registered.</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="title">On this page</div>
+    <ol>
+      <li><a href="#bug-template">Bug report template</a></li>
+      <li><a href="#quick">Quick fixes</a></li>
+      <li><a href="#roadmap">Common requests already planned</a></li>
+      <li><a href="#feature">Feature requests</a></li>
+      <li><a href="#refunds">Refunds</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="bug-template"><span class="num">01</span>What to include in a bug report</h2>
+  <p>For bugs, please include:</p>
+  <ul>
+    <li>iOS version (Settings → General → About → Software Version)</li>
+    <li>iPhone / iPad model</li>
+    <li>App version (You → bottom of the page)</li>
+    <li>What you were doing when it happened</li>
+    <li>Optionally: tap "Share diagnostic report" in You → Diagnostics and attach the file. It's path-scrubbed and contains no personal data — it just lists the stack trace and recent action breadcrumbs.</li>
+  </ul>
+
+  <h2 id="quick"><span class="num">02</span>Quick fixes</h2>
+
+  <details class="faq">
+    <summary>The audio cuts out mid-exercise</summary>
+    <div class="body">
+      <p>iOS gives priority to phone calls / Siri / alarms over our audio. When they end, tap Play again. If audio stays silent after re-launching the app, check that your phone isn't in silent mode and that Bluetooth isn't pointing audio at a disconnected device.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>My streak reset and I practised yesterday</summary>
+    <div class="body">
+      <p>A "day" rolls over at midnight local time. If you practised after midnight one day and not at all the next calendar day, the streak breaks. We don't have a grace period in v1.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>I bought Pro on another device — how do I unlock here?</summary>
+    <div class="body">
+      <p>You tab → "Restore purchases". StoreKit will re-check your Apple ID's entitlements and unlock Pro on this device. Make sure you're signed into the same Apple ID.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>My stats don't appear on my other device</summary>
+    <div class="body">
+      <p>Stats only sync if you turn ON "iCloud sync" in the You tab on both devices, and you're signed into the same iCloud account. The sync uses your private CloudKit container — we never see the data.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>The MIDI keyboard doesn't trigger answers</summary>
+    <div class="body">
+      <p>MIDI input is a Pro feature. After unlocking Pro, the You tab shows a "MIDI input · X connected" line when the keyboard is detected. If it shows 0, try unplugging + reconnecting the USB cable, or re-pairing Bluetooth.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Live Activity doesn't show in Dynamic Island</summary>
+    <div class="body">
+      <p>Dynamic Island is hardware-only on iPhone 14 Pro and later. On older iPhones you'll still see the live activity on the lock screen. On iPads there is no Live Activity at all.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>A drill keeps generating the same patterns</summary>
+    <div class="body">
+      <p>Check You → Settings → randomness is on by default. If you're in Rhythm trainer specifically, the generator avoids consecutive repetitions; if you see one regardless, please share the screenshot with the diagnostic report.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>The metronome ball isn't bouncing / is jittery</summary>
+    <div class="body">
+      <p>If you have <strong>Reduce Motion</strong> enabled in iOS Settings → Accessibility → Motion, the ball is intentionally replaced with a pulsing dot that flashes on the beat without spatial movement. This is by design and matches Apple's accessibility guidelines.</p>
+    </div>
+  </details>
+
+  <h2 id="roadmap"><span class="num">03</span>Common requests we already plan to ship</h2>
+  <ul>
+    <li>More songs in Name That Song</li>
+    <li>Convolution reverb in the Timbre module</li>
+    <li>Daily Challenge mode rotating across all modules</li>
+    <li>Triplet rest support in Rhythm</li>
+    <li>Apple Watch companion for the metronome</li>
+  </ul>
+  <p>If you want one of these prioritised, tell us — we triage by request volume.</p>
+
+  <h2 id="feature"><span class="num">04</span>Feature requests</h2>
+  <p>We read every issue. Be specific: what skill are you trying to train, what's missing from the current modules, what would the perfect exercise look like. The more concrete, the more likely it ships.</p>
+
+  <h2 id="refunds"><span class="num">05</span>Refunds</h2>
+  <p>Refunds are handled by Apple, not by us. Open the App Store on your phone → tap your profile in the top-right → Purchase History → tap the purchase → "Report a Problem". You typically have 90 days. We have no way to issue a refund directly.</p>
+
+  <h2 id="privacy"><span class="num">06</span>Privacy</h2>
+  <p>See the <a href="../privacy-policy/">Privacy Policy</a> — what data Kymar collects, where it lives, and how to delete it.</p>
+
+  <div class="actions">
+    <a class="action" href="https://apps.apple.com/account/subscriptions">
+      <div class="ttl">Manage subscription</div>
+      <div class="sub">Cancel, change plan</div>
+    </a>
+    <a class="action" href="https://reportaproblem.apple.com/">
+      <div class="ttl">Request a refund</div>
+      <div class="sub">Handled by Apple</div>
+    </a>
+    <a class="action" href="../privacy-policy/">
+      <div class="ttl">Privacy &amp; data</div>
+      <div class="sub">What we store, how to delete</div>
+    </a>
+    <a class="action" href="https://github.com/Khalis-ux/kymar-site/issues/new">
+      <div class="ttl">Report an issue</div>
+      <div class="sub">Feature requests, bugs</div>
+    </a>
+  </div>
+
+  <footer>
+    <div>© 2026 Kymar Studio</div>
+    <div class="links">
+      <a href="../">Home</a>
+      <a href="../privacy-policy/">Privacy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

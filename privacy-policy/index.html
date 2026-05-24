@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Kymar — Privacy Policy</title>
+  <meta name="description" content="What data Kymar collects, where it lives, and your rights.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E🎧%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#0a0a0f; --surface:#13131c; --border:#23232f;
+      --text:#e8e8ec; --text-dim:#8b8b96;
+      --accent:#06b6d4; --accent-soft:rgba(6,182,212,.12);
+      --warn:#f59e0b; --warn-soft:rgba(245,158,11,.10);
+      --radius:14px; --maxw:760px;
+      --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+      --font-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.65}
+    body{font-size:16px}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+    a:hover{border-bottom-color:var(--accent)}
+    main{max-width:var(--maxw);margin:0 auto;padding:60px 22px 80px}
+    header.brand{display:flex;align-items:center;gap:10px;margin-bottom:48px}
+    header.brand .mark{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;font-family:var(--font-mono)}
+    header.brand .name{font-weight:600;font-size:15px;letter-spacing:.3px}
+    header.brand .pill{margin-left:auto;font-size:10px;font-family:var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--border);padding:4px 8px;border-radius:6px}
+    h1{font-size:42px;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px}
+    .lede{font-size:18px;color:var(--text-dim);margin:0 0 8px;max-width:60ch}
+    .updated{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:48px}
+    nav.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin-bottom:48px}
+    nav.toc .title{font-size:11px;font-family:var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+    nav.toc ol{margin:0;padding:0;list-style:none;counter-reset:item}
+    nav.toc li{counter-increment:item;padding:4px 0;display:flex;align-items:baseline;gap:10px}
+    nav.toc li::before{content:counter(item,decimal-leading-zero);font-family:var(--font-mono);font-size:11px;color:var(--text-dim);min-width:24px}
+    h2{font-size:24px;letter-spacing:-.01em;margin:56px 0 8px;scroll-margin-top:24px;padding-top:8px;border-top:1px solid var(--border)}
+    h2:first-of-type{border-top:0;margin-top:0;padding-top:0}
+    h2 .num{font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-right:10px;font-weight:500;letter-spacing:.5px}
+    h3{font-size:15px;letter-spacing:.2px;margin:24px 0 4px;color:var(--text)}
+    h4{font-size:13px;letter-spacing:.2px;margin:18px 0 4px;color:var(--text);font-weight:600}
+    p{margin:12px 0}
+    ul{padding-left:22px} ul li{margin:6px 0}
+    .key{font-family:var(--font-mono);font-size:13px;background:var(--accent-soft);color:var(--accent);padding:1px 6px;border-radius:4px}
+    .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:14px 18px;margin:20px 0;font-size:14px;color:var(--text-dim)}
+    .callout strong{color:var(--text)}
+    .callout.warn{border-left-color:var(--warn);background:linear-gradient(180deg, var(--warn-soft), transparent 40%)}
+    table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+    th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+    th{background:rgba(0,0,0,.20);font-weight:600;font-size:11px;letter-spacing:.4px;text-transform:uppercase;color:var(--text-dim)}
+    tr:last-child td{border-bottom:0}
+    code{font-family:var(--font-mono);font-size:13px;background:rgba(255,255,255,.05);padding:1px 6px;border-radius:4px}
+    footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:var(--text-dim);font-size:13px}
+    footer .links{display:flex;gap:18px;flex-wrap:wrap}
+    @media (max-width:600px){
+      main{padding:36px 18px 60px}
+      h1{font-size:32px} h2{font-size:20px;margin-top:40px}
+      header.brand{margin-bottom:32px}
+      table{font-size:12px}
+      th,td{padding:8px 10px}
+    }
+    @media (prefers-color-scheme:light){
+      :root{--bg:#fafafa;--surface:#ffffff;--border:#e6e6ea;--text:#0a0a0f;--text-dim:#6b6b7a;--accent:#0891b2;--accent-soft:rgba(8,145,178,.10);--warn:#b45309;--warn-soft:rgba(180,83,9,.08)}
+      th{background:rgba(0,0,0,.04)}
+      code{background:rgba(0,0,0,.05)}
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header class="brand">
+    <div class="mark">K</div>
+    <div class="name">Kymar</div>
+    <div class="pill">Privacy</div>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="lede">This policy mirrors the App Store <strong>Privacy Labels</strong> you see on Kymar's listing — same data, same wording, no surprises.</p>
+  <div class="updated">Last updated · 24 May 2026</div>
+
+  <p>Kymar ("the app", "we") is designed to be <strong>private by default</strong>. We do not collect, sell, or share personal information. This document explains what data the app handles, where it lives, and the few cases where you can opt in to send something off your device.</p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="title">Contents</div>
+    <ol>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#data">Data the app handles</a></li>
+      <li><a href="#not-collected">What we do NOT collect</a></li>
+      <li><a href="#labels">App Store Privacy Labels</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="summary"><span class="num">01</span>Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Collected?</th><th>Stored where</th><th>Shared?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Practice stats (accuracy, streaks, attempts)</td><td>Yes</td><td>On-device + your private iCloud (opt-in)</td><td>No</td></tr>
+      <tr><td>Your name / display picture</td><td>Only if you sign in with Apple</td><td>Keychain on-device</td><td>No</td></tr>
+      <tr><td>Microphone audio</td><td>Only when a pitch / mic drill is active</td><td>Never persisted</td><td>No</td></tr>
+      <tr><td>Crash + diagnostic reports</td><td>Only if you turn ON "Upload diagnostics on launch"</td><td>Sent to our error tracker (Sentry)</td><td>Sentry only</td></tr>
+      <tr><td>Rewarded video ads (Google AdMob)</td><td>Yes — IDFA when ATT allowed, anonymous device signals otherwise</td><td>Sent to Google AdMob</td><td>Google AdMob (ad attribution)</td></tr>
+      <tr><td>Anonymous usage stats</td><td>Only if you turn ON "Share anonymous usage stats"</td><td>Sent to our Cloudflare Worker</td><td>We host it (no third party)</td></tr>
+      <tr><td>Other tracking pixels, analytics SDKs</td><td><strong>None</strong></td><td>—</td><td>—</td></tr>
+      <tr><td>Contacts, photos, location, health</td><td><strong>Not requested</strong></td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="data"><span class="num">02</span>Data the app handles</h2>
+
+  <h3>1. Practice data (local-first)</h3>
+  <p>Every exercise you complete is stored locally in <code>UserDefaults</code> and used to drive the Stats tab, achievements, and spaced-repetition queue. It includes:</p>
+  <ul>
+    <li>module the round was in (Intervals / Chords / Scales / etc.)</li>
+    <li>whether the answer was correct</li>
+    <li>timestamp</li>
+    <li>in some modules: which interval/chord/scale was the target and which you picked, so we can show per-category accuracy</li>
+  </ul>
+  <p>This data <strong>never leaves your device</strong> unless you separately enable iCloud sync from the You tab.</p>
+
+  <h3>2. iCloud sync (opt-in)</h3>
+  <p>When you turn ON "iCloud sync" in the You tab, your practice stats and spaced-repetition queue are synced to your <strong>private CloudKit container (<code>iCloud.app.kymar</code>)</strong>, which lives in your own iCloud account. We cannot read it. Apple cannot read it. Other Kymar users cannot read it. It exists so a fresh install on a second device picks up where you left off.</p>
+  <p>Turn it OFF at any time to stop syncing; existing data on iCloud is removed at our next sync attempt.</p>
+
+  <h3>3. Sign in with Apple (opt-in)</h3>
+  <p>If you tap "Connect your Apple account" in the You tab, we ask Apple for the display name and (relay) email associated with your Apple ID. Both are stored <strong>only in the iOS Keychain on your device</strong> so the Profile section can show your name. We do not transmit either field to any server.</p>
+  <p>Sign out at any time to remove these from the Keychain.</p>
+
+  <h3>4. Microphone</h3>
+  <p>The Pitch tool and a few interval / scale exercises optionally let you sing or whistle into the microphone for real-time pitch detection. We <strong>never record</strong> the audio — we read the live samples to compute a frequency, then discard them. iOS displays the orange "microphone in use" indicator while a drill is active.</p>
+
+  <h3>5. Crash + diagnostic reports (opt-in)</h3>
+  <p>By default, Kymar captures crash and hang reports via Apple's MetricKit and keeps them <strong>only on your device</strong> (You → Diagnostics shows the count). They never leave the phone.</p>
+  <p>If you turn ON "Upload diagnostics on launch", reports are sent on the next app launch to our error tracker (Sentry, EU region — <code>o4511437337853952.ingest.de.sentry.io</code>). Before sending we <strong>scrub filesystem paths</strong> so user names and container UUIDs are replaced with generic placeholders. The reports contain:</p>
+  <ul>
+    <li>stack traces</li>
+    <li>iOS / device model</li>
+    <li>app version</li>
+    <li>breadcrumb trail of the last ~100 user-visible actions (categorised: "module", "tab", "audio", "purchase" — no PII)</li>
+  </ul>
+  <p>These help us fix crashes faster. You can turn the toggle off at any time, or tap "Clear reports" to delete everything locally.</p>
+
+  <h3>6. In-app purchases</h3>
+  <p>When you buy Kymar Pro, the transaction is handled entirely by Apple's StoreKit. We receive only the entitlement status (Pro or not). We never see your Apple ID, payment method, or transaction history.</p>
+
+  <h3>7. Anonymous usage stats (opt-in)</h3>
+  <p>By default, Kymar collects engagement events <strong>locally on your device</strong> in a ring buffer (last 1,000 events): which module you opened, when you completed a quiz, when you tapped Pro CTAs. This drives the Insights panel in the You tab — none of it leaves your phone unless you opt in below.</p>
+  <p>If you turn ON <strong>"Share anonymous usage stats"</strong> in the You tab, the ring buffer is periodically POSTed to our Cloudflare Worker at <code>kymar-analytics.vittoriocwork.workers.dev</code>. The payload contains:</p>
+  <ul>
+    <li>A random <code>installId</code> (UUID generated on first launch, never tied to your Apple ID, name, email, IDFA, or any persistent device identifier)</li>
+    <li>App version, iOS version, locale</li>
+    <li>Event names from a fixed enum (<code>module_open</code>, <code>quiz_complete</code>, <code>paywall_shown</code>, <code>purchase_attempt</code>, etc.) with an optional module ID and integer value</li>
+  </ul>
+  <p>It does <strong>not</strong> contain:</p>
+  <ul>
+    <li>Your name, email, Apple ID, profile picture</li>
+    <li>Audio recordings, microphone samples, or anything you typed</li>
+    <li>IDFA or any persistent identifier other than the install-scoped UUID</li>
+    <li>Practice content (answers, intervals, chord names, your composer progressions)</li>
+  </ul>
+  <p>We use this to answer "which modules are people sticking with?" and "where does the funnel drop off?" — the kind of questions that drive product roadmap, not advertising. The data is <strong>not</strong> shared with any third party (the Worker is ours), is <strong>not</strong> combined with data from other apps, and is <strong>not</strong> used for tracking in Apple's definition (no cross-app linking, no data broker, no ad targeting).</p>
+  <p>Turn the toggle OFF at any time. The next "Reset everything" in the You tab also rotates the <code>installId</code> so any further uploads start under a fresh anonymous identity with no continuity to the old one.</p>
+
+  <h3>8. Rewarded video ads (Google AdMob)</h3>
+  <p>Free users can choose to watch a short rewarded video to temporarily unlock a Pro feature (one sampler instrument for 30 minutes, or the detailed breakdown of a single quiz session). Ads are loaded and shown by <strong>Google Mobile Ads SDK</strong>. Pro users see no ads.</p>
+  <p>When a rewarded video loads, Google receives:</p>
+  <ul>
+    <li><strong>Device IDFA (Identifier for Advertisers)</strong> — only if you grant permission via Apple's App Tracking Transparency prompt. If you tap "Ask App Not to Track" (or have tracking globally off in Settings → Privacy → Tracking), the IDFA is replaced with all-zeros and Google falls back to <strong>SKAdNetwork</strong> for anonymous attribution.</li>
+    <li><strong>Ad interaction data</strong> — ad request, impression, completion, and reward-earned events tagged with the same IDFA / SKAdNetwork token.</li>
+    <li><strong>Device model, OS version, screen size, language, coarse location (city-level, derived from IP)</strong> — standard ad-serving context.</li>
+    <li><strong>App version + bundle ID</strong> — <code>app.kymar</code> so Google can verify the request comes from Kymar.</li>
+  </ul>
+  <div class="callout warn"><strong>This data IS linked to your device identity</strong> (via IDFA when ATT is granted) <strong>and IS used for tracking</strong> in Apple's definition: Google combines Kymar's ad signals with data from thousands of other apps in the AdMob network to serve more relevant ads and measure attribution. This is the standard ad-network business model. Apple's privacy label on Kymar's listing reflects this explicitly under "Data Used to Track You" → Identifiers, Usage Data.</div>
+  <p>Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+  <p>You can opt out of personalised ads at any time in <strong>Settings → Privacy &amp; Security → Apple Advertising → Personalised Ads</strong> (system-wide) or by revoking Kymar's tracking permission in <strong>Settings → Privacy → Tracking → Kymar</strong>. Rewarded video will still work — only the ad targeting becomes anonymous (SKAdNetwork-only attribution, no IDFA).</p>
+  <p>The only sure way to stop ad data collection entirely is to upgrade to <strong>Pro</strong> (You tab → Upgrade), which removes all ads.</p>
+
+  <h2 id="not-collected"><span class="num">03</span>What we do NOT collect</h2>
+  <ul>
+    <li>Third-party analytics frameworks (Firebase, Mixpanel, Amplitude, etc.)</li>
+    <li>Behavioural / session recording (no replay tools)</li>
+    <li>Precise location (GPS / Wi-Fi triangulation)</li>
+    <li>Contacts, photos, calendar</li>
+    <li>HealthKit data</li>
+    <li>Social-media identifiers</li>
+    <li>Any third-party SDKs other than Google Mobile Ads (rewarded video only) and Sentry (opt-in crash reporting only); the opt-in usage stats go to our own Cloudflare Worker, not a third party</li>
+  </ul>
+
+  <h2 id="labels"><span class="num">04</span>App Store Privacy Labels</h2>
+  <p>For transparency, these are the App Store labels you'll see on Kymar's listing and exactly which features they correspond to in this policy:</p>
+
+  <h4>Data Used to Track You</h4>
+  <ul>
+    <li><strong>Identifiers</strong> (Device ID / IDFA) → AdMob rewarded video — section 8</li>
+    <li><strong>Usage Data</strong> (Advertising Data) → AdMob impression / completion events — section 8</li>
+  </ul>
+
+  <h4>Data Linked to You</h4>
+  <p>Same two categories as above. We declare them "linked" because IDFA is linked to the device by design.</p>
+
+  <h4>Data Not Linked to You</h4>
+  <ul>
+    <li><strong>Diagnostics</strong> (Crash + Performance + Other Diagnostic Data) → opt-in Sentry crash reports — section 5</li>
+    <li><strong>Usage Data</strong> (Product Interaction) → opt-in Cloudflare Worker analytics with anonymous installId — section 7</li>
+  </ul>
+
+  <h2 id="rights"><span class="num">05</span>Your rights</h2>
+  <p>Under GDPR / CCPA you can request: a copy of the data we have about you, deletion of that data, or restriction of processing. For Kymar specifically:</p>
+  <ul>
+    <li><strong>Sentry crash reports</strong> — turn off the upload toggle in You → Diagnostics. Tap "Clear reports" to wipe everything locally.</li>
+    <li><strong>Anonymous usage stats</strong> — turn off the toggle in You → Privacy. Tap "Reset everything" in You → Data to rotate the <code>installId</code> so any further uploads start fresh with no continuity to the old data.</li>
+    <li><strong>AdMob ad data</strong> — revoke tracking in iOS Settings → Privacy → Tracking → Kymar to switch to anonymous SKAdNetwork-only, or upgrade to Pro to remove ads entirely.</li>
+    <li><strong>Practice data + Apple sign-in info</strong> — never leaves your device (unless you opt in to iCloud sync, which uses your own private CloudKit container). "Reset everything" in the You tab clears it.</li>
+  </ul>
+  <p>If you have specific concerns, email us at the address in our <a href="../support/">Support page</a> and we will help in good faith.</p>
+
+  <h2 id="children"><span class="num">06</span>Children</h2>
+  <p>Kymar is rated 4+. It contains <strong>rewarded video ads</strong> served by Google AdMob that the user must explicitly choose to watch to temporarily unlock a Pro feature — never auto-playing, never interstitial, never banner. Pro removes all ads.</p>
+  <p>We do not knowingly request tracking permission from users under 13, and Apple's App Tracking Transparency framework already gates the prompt at the OS level. Kymar contains no user-generated content, no third-party social links, no in-app browser, and no chat.</p>
+  <p>If your child uses Kymar and you'd prefer they never see rewarded ads, configure <strong>Screen Time → Content &amp; Privacy Restrictions → Allow Changes → Advertising → Don't Allow Changes</strong> with tracking denied — Kymar's rewarded prompt will still appear but the ad serve will fall back to anonymous attribution.</p>
+
+  <h2 id="changes"><span class="num">07</span>Changes</h2>
+  <p>If we change this policy we will:</p>
+  <ol>
+    <li>Update the "Last updated" date at the top.</li>
+    <li>Show an in-app notice on the next launch ("Privacy policy updated — review").</li>
+    <li>Keep the diff in our public Git history.</li>
+  </ol>
+  <p>We will not silently expand what data we collect.</p>
+
+  <h2 id="contact"><span class="num">08</span>Contact</h2>
+  <p>For privacy questions: open the <a href="../support/">Support page</a> from inside the app (You → Help &amp; support → Help &amp; guide) or <a href="https://github.com/Khalis-ux/kymar-site/issues/new">open a GitHub issue</a>. A direct email (<a href="mailto:hello@kymar.app">hello@kymar.app</a>) will replace the GitHub channel once the domain is registered.</p>
+
+  <footer>
+    <div>© 2026 Kymar Studio</div>
+    <div class="links">
+      <a href="../">Home</a>
+      <a href="../support/">Support</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
