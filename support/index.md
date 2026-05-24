@@ -9,7 +9,9 @@ where to start.
 
 ## Get in touch
 
-📧 **hello@kymar.app** — we read every message.
+**[Open an issue on GitHub](https://github.com/Khalis-ux/kymar-ios/issues/new)** — every report is read and triaged. Bug reports and feature requests both welcome there. A GitHub account is free; sign-up takes ~30 seconds.
+
+_We're setting up a regular email (`hello@kymar.app`) once the domain is registered; in the meantime GitHub Issues is the fastest channel._
 
 For bugs, please include:
 
@@ -74,7 +76,7 @@ volume.
 
 ## Feature requests
 
-We read every email. Be specific: what skill are you trying to train,
+We read every issue. Be specific: what skill are you trying to train,
 what's missing from the current modules, what would the perfect
 exercise look like. The more concrete, the more likely it ships.
 
