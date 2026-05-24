@@ -268,6 +268,6 @@ We will not silently expand what data we collect.
 
 For privacy questions: open the Support page link from inside the app
 (You → Help & support → Help & guide) or
-[open a GitHub issue](https://github.com/Khalis-ux/kymar-ios/issues/new).
+[open a GitHub issue](https://github.com/Khalis-ux/kymar-site/issues/new).
 A direct email (`hello@kymar.app`) will replace the GitHub channel once
 the domain is registered.

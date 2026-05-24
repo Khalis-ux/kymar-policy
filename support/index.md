@@ -9,7 +9,7 @@ where to start.
 
 ## Get in touch
 
-**[Open an issue on GitHub](https://github.com/Khalis-ux/kymar-ios/issues/new)** — every report is read and triaged. Bug reports and feature requests both welcome there. A GitHub account is free; sign-up takes ~30 seconds.
+**[Open an issue on GitHub](https://github.com/Khalis-ux/kymar-site/issues/new)** — every report is read and triaged. Bug reports and feature requests both welcome there. A GitHub account is free; sign-up takes ~30 seconds.
 
 _We're setting up a regular email (`hello@kymar.app`) once the domain is registered; in the meantime GitHub Issues is the fastest channel._
 
